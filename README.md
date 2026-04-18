@@ -7,7 +7,7 @@ You are required to implement the features using Node.js with MongoDB as the dat
 
 ## 1. Authentication System (JWT-Based)
 
-### Register (GET /register)
+### Register (POST /register)
 
 Create a user account using:
 
@@ -17,7 +17,7 @@ Create a user account using:
 
 Send data to the backend API and ensure it is properly stored in the database. Also handle success and error responses appropriately, returning clear and meaningful feedback based on the outcome of each request.
 
-### Login (GET /login)
+### Login (POST /login)
 
 Authenticate users using email and password, store the returned JWT token securely (preferably using HTTP-only cookies), and redirect the user to the homepage after a successful login.
 
