@@ -6,8 +6,12 @@ const connectDB = require('./config/db');
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:3001', credentials: true })); // Adjust for frontend URL
+app.use(cors({ origin: 'http://localhost:5173', credentials: true })); // Adjust for frontend URL
 app.use(cookieParser());
+
+app.get('/', (req,res)=> {
+    res.send('Api is running');
+});
 
 // Connect to MongoDB
 connectDB();
@@ -18,7 +22,6 @@ const profileRoutes = require('./routes/profile');
 const cryptoRoutes = require('./routes/crypto');
 
 app.use('/auth', authRoutes);
-app.use('/', authRoutes);
 app.use('/profile', profileRoutes);
 app.use('/crypto', cryptoRoutes);
 
